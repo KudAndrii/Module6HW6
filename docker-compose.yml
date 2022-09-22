@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  backend:
+    image: identity-api:v1
+    build: ./IdentityApiApp
+    ports:
+      - "7141:5141"
+    container_name: identity-api-app
+  frontent:
+    image: identity-client:v1
+    build: ./IdentityClientApp
+    ports:
+      - "7030:5030"
+    container_name: identity-client-app
+  identity:
+    image: identity-server:v1
+    build: ./IdentityServerApp
+    ports:
+      - "7184:5221"
+    container_name: identity-server-app

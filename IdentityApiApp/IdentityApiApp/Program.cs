@@ -12,7 +12,8 @@ namespace IdentityApiApp
                 .AddIdentityServerAuthentication("Bearer", options =>
                 {
                     options.ApiName = "weatherapi";
-                    options.Authority = "https://localhost:7184";
+                    options.Authority = "http://localhost:7184";
+                    options.RequireHttpsMetadata = false;
                 });
 
             builder.Services.AddControllers();
